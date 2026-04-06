@@ -1,6 +1,13 @@
-import fs from 'fs';
+const fs = require('fs');
+const path = require('path');
 
-fs.readFile('./modules/data.txt', 'utf8', (err, data) => {
+const wrongPath = path.join('modules', 'data.txt');
+const filePath = path.join(__dirname, 'data.txt');
+
+console.log(`Wrong path: ${wrongPath}`);
+console.log(`File path: ${filePath}`);
+
+fs.readFile(filePath, 'utf8', (err, data) => {
   if (err) {
     console.error(err);
     return;
@@ -8,7 +15,7 @@ fs.readFile('./modules/data.txt', 'utf8', (err, data) => {
   console.log(data);
 });
 
-fs.writeFile('./modules/data.txt', 'Hello, World!', (err) => {
+fs.writeFile(filePath, 'Hello, World!', (err) => {
   if (err) {
     console.error(err);
     return;
