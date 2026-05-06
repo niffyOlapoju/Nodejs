@@ -9,7 +9,7 @@
 import { add, addTen } from './add.js';
 import Nifemi, { subtractTen as Tomiwa } from './subtract.js';
 
-const x = add(10, 5);
+const x = add(50, 5);
 console.log('add', x); // Output: 15
 const y = Nifemi(10, 5);
 console.log('subtract', y); // Output: 5
